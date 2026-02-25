@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV Player</title>
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <header>
+    <button id="back-btn">← 返回</button>
+    <h1 id="channel-title">加载中...</h1>
+  </header>
+
+  <div class="video-container">
+    <video id="video-player" controls preload="metadata"></video>
+  </div>
+
+  <div class="control-bar">
+    <button id="play-pause-btn" title="播放/暂停">▶️</button>
+    <button id="mute-btn" title="静音/取消静音">🔊</button>
+    <button id="pip-btn" title="画中画">📺</button>
+    <button id="channels-btn" title="频道列表">📋</button>
+  </div>
+
+  <aside id="channels-sidebar">
+    <div class="sidebar-header">
+      <h2>频道列表</h2>
+      <button id="close-sidebar-btn">✕</button>
+    </div>
+    <div id="sidebar-channel-list">
+      <!-- 频道列表将在这里动态渲染 -->
+    </div>
+  </aside>
+
+  <!-- HLS.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+
+  <script type="module" src="../shared/constants.js"></script>
+  <script type="module" src="../shared/storage.js"></script>
+  <script type="module" src="player.js"></script>
+</body>
+</html>
